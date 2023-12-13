@@ -14,8 +14,8 @@ function calcularFiniquito(salarioDiario) {
 
 let salarioMensual = Number(prompt("Ingrese su salario mensual"));
 let salarioDiario = salarioMensual / 30;
-let mesesLaborados = Number(prompt("¿Cuántos meses llevas laborados este año?"));
-const diasTrabajados = mesesLaborados * 30;
+let mesesTrabajados = Number(prompt("¿Cuántos meses llevas laborados este año?"));
+const diasTrabajados = mesesTrabajados * 30;
 
 let operacion;
 do {
@@ -24,7 +24,7 @@ do {
 
 switch (operacion) {
     case "aguinaldo":
-        if (mesesLaborados >= 12) {
+        if (mesesTrabajados <= 12) {
             const aguinaldoCalculado = calcularAguinaldo(salarioDiario, diasTrabajados);
             alert(`Tu aguinaldo corresponde a $${aguinaldoCalculado}`);
         } else {
