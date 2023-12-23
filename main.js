@@ -132,7 +132,7 @@ let carrito = [];
 function calcularTotal() {
   return carrito
     .reduce(function (total, item) {
-      return total + item.vino.precio;
+      return total + item.cantidad * item.vino.precio;
     }, 0)
     .toFixed(2);
 }
@@ -179,6 +179,17 @@ while (continuarComprando) {
     );
 
     let agregarAlCarrito = confirm("¿Desea agregar este vino al carrito?");
+
+    if (agregarAlCarrito) {
+      let cantidad = parseInt(prompt("Ingrese la cantidad de botellas que desea agregar al carrito:"));
+  
+      if (!isNaN(cantidad) && cantidad > 0) {
+        carrito.push({ vino: vinoEncontrado, cantidad: cantidad });
+        alert("Se ha agregado al carrito exitosamente.");
+      } else {
+        alert("La cantidad ingresada no es válida. No se ha agregado al carrito.");
+      }
+    }
 
   } else {
     alert("No se encontró ningún vino con el dato ingresado.");
