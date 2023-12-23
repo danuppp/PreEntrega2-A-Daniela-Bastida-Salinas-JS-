@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <script src="main.js"></script>
+    <style>
+        /* Puedes agregar estilos CSS aquí según tus preferencias */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+    
+        h1 {
+          color: #333;
+        }
+    
+        #carrito {
+          margin-top: 20px;
+        }
+    
+        #detalles-carrito {
+          margin-top: 10px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Carrito de Vinos</h1>
+    
+      <script src="main.js">
+        // Aquí puedes colocar el código JavaScript que hemos estado trabajando
+        // ...
+    
+        // Ejemplos de uso
+        agregarAlCarrito(vinosTintos[0], 2);
+        agregarAlCarrito(vinosBlancos[1], 1);
+    
+        // Función para mostrar detalles del carrito con forEach
+        function mostrarDetallesCarrito() {
+          carrito.forEach(function(item) {
+            console.log(item.cantidad + " botella(s) de " + item.vino.nombre + " - $" + (item.vino.precio * item.cantidad).toFixed(2));
+          });
+        }
+    
+        mostrarDetallesCarrito();
+        console.log("Total del carrito: $" + calcularTotal());
+      </script>
+    
+      <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="detalles-carrito">
+          <!-- Aquí se mostrarán dinámicamente los detalles del carrito -->
+        </ul>
+        <p>Total del carrito: $<span id="total-carrito"></span></p>
+      </div>
 </body>
 </html>
